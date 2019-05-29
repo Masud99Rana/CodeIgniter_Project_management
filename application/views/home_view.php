@@ -6,6 +6,13 @@
 
 <?php endif; ?>
 
+
+<?php 	if($this->session->flashdata('user_registered')) :?>
+	
+	<?php echo $this->session->flashdata('user_registered') ?>
+
+<?php endif; ?>
+
 </p>
 <p class="bg-danger">
 
@@ -18,4 +25,4 @@
 </p>
 
 
-<h2>Hello I am from View</h2>
+<h2>Hello I am from Home View</h2>
