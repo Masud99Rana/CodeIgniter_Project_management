@@ -4,15 +4,11 @@
 class Home extends CI_Controller {
 
 	public function index()
-	{
-		$this->load->view('home_view');
-		// 
-		// echo "This is Masud from home Controller";
+	{	
+		$data['main_view'] = "home_view";
+		// $this->load->view('home_view');
+		$this->load->view('layouts/main', $data);
+		
 	}
-
-
-	public function me(){
-
-		echo "Hello, Masud from home Controller";
-	}
+ 
 }
