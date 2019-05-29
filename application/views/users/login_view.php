@@ -3,7 +3,6 @@
 	<h2>Log out</h2>
 
 <?php echo form_open('users/logout'); ?>
-
 <p>
 <?php if($this->session->userdata('username')): ?>
 	
@@ -18,27 +17,20 @@
 		'value' => 'LogOut',
 	);
 ?>
-
 <?php echo form_submit($data) ?>
-
 <?php echo form_close(); ?>
-
 
 
 <?php else: ?>  <!-- hide the form if logged -->
 
 
 <h2>Login Form</h2>
-
 <?php  $attributes = array('id'=> 'login_form', 'class'=> 'form_horiziontal'); ?>
 
 
 <?php if($this->session->flashdata('errors')): ?>
-
 <?php	echo $this->session->flashdata('errors') ?>
-
 <?php endif; ?>
-
 
 
 <?php echo form_open('users/login', $attributes); ?>
@@ -57,6 +49,7 @@
 	<?php echo form_input($data) ?>
 
 </div>
+
 
 <div class="form-group">
 	
@@ -87,6 +80,7 @@
 	
 </div>
 
+
 <div class="form-group">
 	
 	<?php
@@ -102,9 +96,6 @@
 
 
 <?php echo form_close(); ?>
-
-
-
 
 
 <?php endif; ?>  <!-- hide the form if logged -->
