@@ -5,6 +5,29 @@
 
 	<h3>Description: </h3>
 	<p><?php echo $project_data->project_body; ?></p>
+
+
+
+	<h3>Tasks</h3>
+	
+	<?php if($completed_tasks): ?>
+		
+<ul>
+		
+		<?php foreach( $completed_tasks as $task): ?>
+	<li>		
+			<a href="<?php echo base_url() ?>tasks/display/<?php echo $task->task_id ?>">
+				<?php echo $task->task_name ?>
+			</a>
+	</li>	
+		<?php endforeach; ?>
+
+</ul>
+	<?php else: ?>
+
+		<p>You have no Tasks pending</p>
+	<?php endif; ?>
+
 </div>
 
 <div class="col-xs-3 pull-right">
