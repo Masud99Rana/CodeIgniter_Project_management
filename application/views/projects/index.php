@@ -6,25 +6,42 @@
 
 <p class="bg-success">
 
-<?php 	if($this->session->flashdata('project_created')) :?>
+<?php if($this->session->flashdata('project_created')) :?>
 	
 	<?php echo $this->session->flashdata('project_created') ?>
 
 <?php endif; ?>
 
 
-<?php 	if($this->session->flashdata('project_updated')) :?>
+<?php if($this->session->flashdata('project_updated')) :?>
 	
 	<?php echo $this->session->flashdata('project_updated') ?>
 
 <?php endif; ?>
 
 
-<?php 	if($this->session->flashdata('project_deleted')) :?>
+<?php if($this->session->flashdata('project_deleted')) :?>
 	
 	<?php echo $this->session->flashdata('project_deleted') ?>
 
 <?php endif; ?>
+
+
+
+<?php if($this->session->flashdata('task_created')) :?>
+	
+	<?php echo $this->session->flashdata('task_created') ?>
+
+<?php endif; ?>
+
+
+<?php if($this->session->flashdata('task_updated')) :?>
+	
+	<?php echo $this->session->flashdata('task_updated') ?>
+
+<?php endif; ?>
+
+
 
 </p>
 
