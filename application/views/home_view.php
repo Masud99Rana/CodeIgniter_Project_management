@@ -22,7 +22,47 @@
 
 <?php endif; ?>
 
+<?php 	if($this->session->flashdata('no_access')) :?>
+	
+	<?php echo $this->session->flashdata('no_access') ?>
+
+<?php endif; ?>
+
 </p>
 
 
-<h2>Hello I am from Home View</h2>
+<div class="jumbotron">
+	<h2 class="text-center">Welcome to the CI App</h2>
+</div>
+<?php if($this->session->userdata('logged_in')): ?>
+<h1>Projects</h1>
+
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Project Name</th>
+				<th>Project Description</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+
+		<?php foreach ($projects as $project): ?>
+				
+			<tr>
+				<td>
+					<?php echo $project->project_name; ?>
+				</td>
+				<td>
+					<?php echo $project->project_body; ?>
+				</td>
+				<td>
+					<a href="<?php echo base_url()?>project"></a>
+				</td>
+				
+			</tr>
+		<?php endforeach; ?>
+		</tbody>
+	</table>
+<?php endif; ?>

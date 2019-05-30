@@ -26,13 +26,19 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="<?php echo base_url() ?>">Home<span class="sr-only">(current)</span></a></li>
-        <li class=""><a href="<?php echo base_url() ?>/users/register">Register <span class="sr-only">(current)</span></a></li>
+        <li class=""><a href="<?php echo base_url() ?>projects">Project <span class="sr-only">(current)</span></a></li>
+        <li class=""><a href="<?php echo base_url() ?>users/register">Register <span class="sr-only">(current)</span></a></li>
  
         
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+
+      	<?php if($this->session->userdata('logged_in')): ?>
+      		
+        	<li><a href="<?php echo base_url() ?>users/logout">Logout</a></li>
+
+      	<?php endif; ?>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

@@ -70,11 +70,11 @@ class Users extends CI_Controller {
 
 				$this->session->set_flashdata('login_success', 'You are now logged In');
 
-				$data['main_view'] = "admin_view";
+				// $data['main_view'] = "admin_view";
 
-				$this->load->view('layouts/main', $data);
+				// $this->load->view('layouts/main', $data);
 
-				// redirect('home/index');
+				redirect('home/index');
 			}else {
 
 				$this->session->set_flashdata('login_failed', 'Sorry, You are not logged In');
