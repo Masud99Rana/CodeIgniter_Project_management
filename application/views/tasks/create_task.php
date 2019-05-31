@@ -67,3 +67,12 @@
 
 
 <?php echo form_close(); ?>
+
+
+
+<script>
+
+	webshim.setOptions('forms-ext', {types: 'date'});
+	//request the features you need:
+	webshim.polyfill('forms forms-ext');
+</script>

@@ -37,69 +37,46 @@
 
 
 <?php if($this->session->userdata('logged_in')): ?>
-<h1>Projects</h1>
 
+<div class="panel panel-primary">
+	<div class="panel-heading"><h3>Projects</h3></div>
+	<div class="panel-body">		
+		<ul class="list-group">			
+		<?php foreach ($projects as $project): ?>			
+			<li class="list-group-item">
 
-	<table class="table table-bordered">
-		<thead>
-			<tr>
-				<th>Project Name</th>
-				<th>Project Description</th>
-				<th>Action</th>
-			</tr>
-		</thead>
-		<tbody>
-
-		<?php foreach ($projects as $project): ?>
-				
-			<tr>
-				<td>
+				<a href="<?php echo base_url()?>projects/display/<?php echo $project->id ?>">
 					<?php echo $project->project_name; ?>
-				</td>
-				<td>
-					<?php echo $project->project_body; ?>
-				</td>
-				<td>
-					<a href="<?php echo base_url()?>projects/display/<?php echo $project->id ?>">View</a>
-				</td>
-				
-			</tr>
+				</a>		
+
+			</li>
 		<?php endforeach; ?>
-		</tbody>
-	</table>
+		</ul>
+	</div>
+</div><!--  end of panel -->
 <?php endif; ?>
 
 
 
+
 <?php if($this->session->userdata('logged_in')): ?>
-<h1>Tasks</h1>
 
-
-	<table class="table table-bordered">
-		<thead>
-			<tr>
-				<th>Task Name</th>
-				<th>Task Description</th>
-				<th>Action</th>
-			</tr>
-		</thead>
-		<tbody>
+<div class="panel panel-success">
+	<div class="panel-heading"><h3>Tasks</h3></div>
+	<div class="panel-body">		
+		<ul class="list-group">	
 
 		<?php foreach ($tasks as $task): ?>
-				
-			<tr>
-				<td>
-					<?php echo $task->task_name; ?>
-				</td>
-				<td>
-					<?php echo $task->task_body; ?>
-				</td>
-				<td>
-					<a href="<?php echo base_url()?>tasks/display/<?php echo $task->id ?>">View</a>
-				</td>
-				
-			</tr>
+			<li class="list-group-item">	
+
+				<a href="<?php echo base_url()?>tasks/display/<?php echo $task->id ?>"><?php echo $task->task_name; ?></a>
+			</li>
+
 		<?php endforeach; ?>
-		</tbody>
-	</table>
+
+
+		</ul>
+	</div>
+</div><!--  end of panel -->
+
 <?php endif; ?>
