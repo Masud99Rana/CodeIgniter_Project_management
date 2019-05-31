@@ -10,9 +10,9 @@
 	<?php endif; ?>
 
 
-	<?php 	if($this->session->flashdata('unmark_done')) :?>
+	<?php 	if($this->session->flashdata('mark_undone')) :?>
 		
-		<?php echo $this->session->flashdata('unmark_done') ?>
+		<?php echo $this->session->flashdata('mark_undone') ?>
 
 	<?php endif; ?>
 

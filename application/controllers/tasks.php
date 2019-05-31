@@ -115,7 +115,7 @@ class Tasks extends CI_Controller {
 
 			$project_id = $this->task_model->get_task_project_id($task_id);
 
-			$this->session->set_flashdata('unmark_done', 'This task has been incompleted');
+			$this->session->set_flashdata('mark_undone', 'This task has been incompleted');
 			
 			redirect('projects/display/' . $project_id .'');
 		}
