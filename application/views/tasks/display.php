@@ -7,6 +7,7 @@
 				<th>Task Name</th>
 				<th>Task Description</th>
 				<th>Date</th>
+				<th>Status</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -19,7 +20,7 @@
 					</div>
 					<div class="task-actions">
 						<a href="<?php echo base_url(); ?>/tasks/edit/<?php echo $task->id ?>">Edit</a>
-						<a href="<?php echo base_url(); ?>/tasks/delete/<?php echo $task->id ?>">Delete</a>
+						<a href="<?php echo base_url(); ?>/tasks/delete/<?php echo $task->id ?>/<?php echo $task->project_id ?>">Delete</a>
 					</div>
 				</td>
 				<td>
@@ -29,7 +30,9 @@
 				<td>
 					<?php echo $task->date_created; ?>
 				</td>
-				
+
+				<td><a href="<?php echo base_url(); ?>/tasks/mark_complete/<?php echo $task->id ?>">Mark Complete</a> || 
+				<a href="<?php echo base_url(); ?>/tasks/mark_incomplete/<?php echo $task->id ?>">Mark Incomplete</a></td>				
 			</tr>
 		</tbody>
 	</table>

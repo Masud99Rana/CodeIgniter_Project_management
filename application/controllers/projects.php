@@ -9,7 +9,7 @@ class Projects extends CI_Controller {
 
 		if(!$this->session->userdata('logged_in')){
 
-			$this->session->set_flashdata('no_access', 'Sorry yor not allowed or not logged in');
+			$this->session->set_flashdata('no_access', 'Sorry, you not allowed or not logged in');
 			redirect('home/index');
 		}
 	}
@@ -28,6 +28,10 @@ class Projects extends CI_Controller {
 	{	
 
 		$data['completed_tasks'] = $this->project_model->get_project_tasks($project_id, true);
+
+		$data['not_completed_tasks'] = $this->project_model->get_project_tasks($project_id, false);
+
+
 
 
 		$data['project_data'] = $this->project_model->get_project($project_id);
@@ -102,6 +106,11 @@ class Projects extends CI_Controller {
 
 
 	public function delete($project_id){
+
+		//delete project with all task
+		$this->project_model->delete_project_tasks($project_id);
+
+
 
 		$this->project_model->delete_project($project_id);
 		$this->session->set_flashdata('project_deleted','Your project has been deleted');

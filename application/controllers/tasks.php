@@ -87,4 +87,39 @@ class Tasks extends CI_Controller {
 
 
 
+
+	public function delete($task_id, $project_id){
+
+		$this->task_model->delete_task($task_id);
+		$this->session->set_flashdata('task_deleted','Your task has been deleted');
+		redirect('projects/display/' . $project_id .'');
+	}
+
+
+	public function mark_complete($task_id){
+
+		if($this->task_model->mark_task_complete($task_id)) {
+
+			$project_id = $this->task_model->get_task_project_id($task_id);
+
+			$this->session->set_flashdata('mark_done', 'This task has been completed');
+			
+			redirect('projects/display/' . $project_id .'');
+		}
+	}
+
+
+	public function mark_incomplete($task_id){
+
+		if($this->task_model->mark_task_incomplete($task_id)) {
+
+			$project_id = $this->task_model->get_task_project_id($task_id);
+
+			$this->session->set_flashdata('unmark_done', 'This task has been incompleted');
+			
+			redirect('projects/display/' . $project_id .'');
+		}
+	}
+
+
 }

@@ -69,6 +69,8 @@ class Project_model extends CI_Model {
 
 
 
+
+	//make relationship between projects and tasks(has column project_id) table
 	public function get_project_tasks($project_id, $active = true){
 
 		$this->db->select('
@@ -89,10 +91,10 @@ class Project_model extends CI_Model {
 
 		if ($active == true) {
 			
-			$this->db->where('tasks.status', 0);
+			$this->db->where('tasks.status', 1);
 		} else{
 
-			$this->db->where('tasks.status', 1);
+			$this->db->where('tasks.status', 0);
 		}
 
 
@@ -107,6 +109,17 @@ class Project_model extends CI_Model {
 		return $query->result();
 
 
+	}
+
+
+	//delete all tasks with the project
+	public function delete_project_tasks($project_id){
+
+
+		$this->db->where('project_id', $project_id);
+		$this->db->delete('tasks');
+
+		return true;
 	}
 
 

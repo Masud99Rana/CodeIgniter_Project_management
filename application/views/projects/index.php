@@ -47,7 +47,7 @@
 
 
 
-	<a href="<?php echo base_url(); ?>projects/create" class="btn btn-primary pull-right mb-2">Create Project</a>
+	<a href="<?php echo base_url(); ?>projects/create" class="btn btn-primary pull-right" style=" margin-bottom: 2%">Create Project</a>
 
 <table class="table table-bordered">
 	<thead>

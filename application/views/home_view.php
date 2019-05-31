@@ -58,7 +58,7 @@
 					<?php echo $project->project_body; ?>
 				</td>
 				<td>
-					<a href="<?php echo base_url()?>project"></a>
+					<a href="<?php echo base_url()?>projects/display/<?php echo $project->id ?>">View</a>
 				</td>
 				
 			</tr>
