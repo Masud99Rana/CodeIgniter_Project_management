@@ -1,3 +1,21 @@
+<?php 
+  
+
+  $home = "";
+  $projects = "";
+  $register = "";
+
+  if($this->uri->segment(1) == 'projects'){
+    $projects = 'active';
+  }else if($this->uri ->segment(2) == 'register'){
+    $register = 'active';
+  }else{
+
+    $home = 'active';
+  }
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,13 +45,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="<?php echo base_url() ?>">Home<span class="sr-only">(current)</span></a></li>
+        <li class="<?php echo $home;  ?>"><a href="<?php echo base_url() ?>">Home<span class="sr-only">(current)</span></a></li>
 <?php if($this->session->userdata('logged_in')): ?>
-        <li class=""><a href="<?php echo base_url() ?>projects">Project <span class="sr-only">(current)</span></a></li>
+        <li class="<?php echo $projects;  ?>"><a href="<?php echo base_url() ?>projects">Projects <span class="sr-only">(current)</span></a></li>
 <?php endif; ?>       
 
 <?php if(!$this->session->userdata('logged_in')): ?>
-        <li class=""><a href="<?php echo base_url() ?>users/register">Register <span class="sr-only">(current)</span></a></li>
+        <li class="<?php echo $register; ?>"><a href="<?php echo base_url() ?>users/register">Register <span class="sr-only">(current)</span></a></li>
 <?php endif; ?>       
  
         
