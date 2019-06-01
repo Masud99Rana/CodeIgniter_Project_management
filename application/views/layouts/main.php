@@ -76,7 +76,7 @@
 
 
 
-	<div class="container">
+	<div class="container" >
 		<div class="col-xs-3">
 			
 			<?php $this->load->view('users/login_view'); ?>
@@ -85,5 +85,23 @@
 			<?php $this->load->view($main_view); ?>
 		</div>
 	</div>
+
+
+
+<section style="background-color: #636e72;
+color: #fff;
+text-align: center;
+margin-top: 5%
+">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="copyright"><p style="margin: 12px;">Copyright © 2019 Masud Rana. All Rights Reserved. </p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 </body>
 </html>
